@@ -12,7 +12,7 @@ graph TD
     A[GitHub: Flux-repo] -->|Pull Changes| B[Flux Controller]
     B -->|Deploy| C[EKS Cluster]
     E -->|deploy Flux| C
-    c --> |install Flux| B
+    C --> |install Flux| B
     B -->|Continuous Sync| C
 ```
 
