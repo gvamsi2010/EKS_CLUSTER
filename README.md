@@ -11,6 +11,7 @@ graph TD
     E[Terraform] -->|Create Cluster| C[EKS Cluster]
     A[GitHub: Flux-test] -->|Pull Changes| B[Flux Controller]
     B -->|Deploy| C[EKS Cluster]
+    E -->|deploy Flux| B
     B -->|Continuous Sync| C
 ```
 
