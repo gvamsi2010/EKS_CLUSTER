@@ -1,0 +1,30 @@
+# to ignore terrafom state files and lock files and other files
+# Terraform state files
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+.terraform.tfstate.lock.info
+
+# Terraform directory
+.terraform/
+
+# Terraform lock files
+.terraform.lock.hcl
+
+
+# CLI configuration files
+.terraformrc
+terraform.rc
+
+
+# Log files
+*.log
+
+# Exclude provider binary directory
+.terraform.d/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
