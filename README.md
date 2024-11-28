@@ -20,5 +20,50 @@ This project provisions an Amazon EKS (Elastic Kubernetes Service) cluster using
 ```bash
 terraform init
 
-Review planned changes:
-- ``terraform plan``
+terraform plan
+
+terraform apply
+
+aws eks update-kubeconfig --region <your-region> --name eks-cluster-01
+
+
+Infrastructure Components
+EKS Cluster
+VPC with public/private subnets
+IAM roles and policies
+Security groups
+EKS node groups
+Configuration Details
+VPC Configuration
+3 public subnets
+Internet Gateway
+Route tables
+Auto-assign public IPs enabled
+EKS Cluster
+Kubernetes version: Latest
+Public endpoint access
+Node group configuration
+IAM role associations
+Security
+Cluster security groups
+IAM roles for cluster and nodes
+RBAC configuration
+Maintenance
+To destroy the infrastructure:
+terraform destroy
+
+Troubleshooting
+Common issues:
+
+Subnet configuration errors
+IAM permission issues
+Security group conflicts
+Contributing
+Fork the repository
+Create a feature branch
+Submit a pull request
+License
+MIT License
+
+Author
+vamsi
