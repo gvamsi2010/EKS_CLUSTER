@@ -3,6 +3,42 @@
 ## Overview
 This project provisions an Amazon EKS (Elastic Kubernetes Service) cluster using Terraform, including VPC, subnets, IAM roles, and node groups.
 
+# ESS Cluster with Flux GitOps Implementation
+
+## Architecture Diagram
+```mermaid
+graph TD
+    A[GitHub: Flux-test] -->|Pull Changes| B[Flux Controller]
+    B -->|Deploy| C[EKS Cluster]
+    D[Git Push] -->|Manifests| A
+    B -->|Continuous Sync| C
+```
+
+## Project Overview
+- ESS Cluster deployment using Terraform
+- Flux GitOps controller integration
+- Automated manifest deployment from GitHub
+
+## Prerequisites
+- AWS CLI configured
+- Terraform installed
+- Kubectl installed
+- GitHub account with token
+- Repository: https://github.com/gvamsi2010/Flux-test
+
+## Infrastructure Components
+### 1. AWS Resources
+- ESS Cluster (eks-cluster-01)
+- VPC with public subnets
+- IAM roles and policies
+- Security groups
+
+### 2. Flux Components
+- Flux controllers
+- Source controller
+- Kustomization controller
+- Git repository sync
+
 ## Project Structure
 ├── provider.tf # AWS and Kubernetes provider configurations ├── eks-cluster.tf # EKS cluster and node group definitions └── vpc.tf # VPC, subnet, and networking resources
 ## Prerequisites
@@ -25,6 +61,7 @@ terraform plan
 terraform apply
 
 aws eks update-kubeconfig --region <your-region> --name eks-cluster-01
+
 
 
 Infrastructure Components
