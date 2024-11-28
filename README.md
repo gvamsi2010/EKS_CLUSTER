@@ -8,6 +8,7 @@ This project provisions an Amazon EKS (Elastic Kubernetes Service) cluster using
 ## Architecture Diagram
 ```mermaid
 graph TD
+    E[Terraform] -->|Create Cluster| C[EKS Cluster]
     A[GitHub: Flux-test] -->|Pull Changes| B[Flux Controller]
     B -->|Deploy| C[EKS Cluster]
     D[Git Push] -->|Manifests| A
